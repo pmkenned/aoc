@@ -1,5 +1,5 @@
-CXX=g++
-CXXFLAGS=-Wall -Wextra -pedantic -std=c++11 -Weffc++ -O2
+CC=gcc
+CFLAGS=-Wall -Wextra -pedantic -std=c89 -O2
 
 .PHONY: all part1 part2 run perf clean
 
@@ -7,8 +7,8 @@ all: part1 part2
 part1: part1.exe
 part2: part2.exe
 
-%.exe: %.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $<
+%.exe: %.c
+	$(CC) $(CFLAGS) -o $@ $<
 
 run: all
 	./part1.exe

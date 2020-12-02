@@ -4,7 +4,7 @@ if [ $# -le 0 ]; then
     echo "must specify program" > /dev/stderr
     exit 1
 fi
-PROG=$1
+PROG="scala $1"
 
 N=3
 if [ $# -gt 1 ]; then

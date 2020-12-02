@@ -1,3 +1,7 @@
 *.o
 .*.swp
 *.exe
+*.hi
+*.class
+*.cmi
+*.cmo

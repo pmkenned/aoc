@@ -13,8 +13,8 @@ int prod_sum(NumIt first, NumIt last, int sum, int n)
     for (auto i = first; i != last-1; i++) {
         int sought = sum - *i;
         if (n == 2) {
-            auto it = find(i+1, last, sought);
-            if (it != last) {
+            auto it = lower_bound(i+1, last, sought);
+            if (it != last && *it == sought) {
                 p = *i * sought;
                 break;
             }

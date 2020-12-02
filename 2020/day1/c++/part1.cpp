@@ -23,14 +23,15 @@ int main()
 	if (numbers.empty())
 		return 0;
 
+    // when array is sorted, can use lower_bound, which is O(log n), instead of find, which is O(n)
     sort(numbers.begin(), numbers.end());
 
     for (auto i = numbers.begin(); i != numbers.end()-1; i++) {
         int sought = 2020 - *i;
-        auto it = find(i+1, numbers.end(), sought);
-        if (it != numbers.end()) {
+        auto it = lower_bound(i+1, numbers.end(), sought);
+        if (it != numbers.end() && *it == sought) {
             cout << *i * sought << endl;
-            //break; // uncomment if there could be more than one pair
+            break; // comment if there could be more than one pair
         }
     }
 
