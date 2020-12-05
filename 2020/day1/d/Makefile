@@ -1,11 +1,14 @@
 .PHONY: all clean
 
-# Need to: source ~/dlang/dmd-2.094.2/activate
+SHELL := /bin/bash
 
 all: part1.exe
 
-part1.exe: part1.d
-	dmd -of=part1.exe part1.d
+%.exe: %.d
+	source /home/paul/dlang/dmd-2.094.2/activate && dmd -of=$@ $<
+
+run: all
+	./part1.exe
 
 clean:
 	rm -f *.exe *.o

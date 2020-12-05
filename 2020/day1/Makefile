@@ -11,6 +11,9 @@ all:
 	make -C scala
 	make -C java
 	make -C go
+	make -C "c#"
+	make -C asm
+	make -C d
 
 #run: MAKEFLAGS += --silent
 run:
@@ -26,12 +29,38 @@ run:
 	@make -C ocaml run
 	@echo "\n==== Python ====="
 	@cd python && ./part1.py
+	@echo "\n==== Perl ======="
+	@cd perl && ./part1.pl
+	@echo "\n==== PHP ========"
+	@cd php && ./part1.php
+	@echo "\n==== Ruby ======="
+	@cd ruby && ./part1.rb
+	@echo "\n==== Elixir ====="
+	@cd elixir && ./part1.exs
+	@echo "\n==== Clojure ===="
+	@cd clojure && ./part1.clj
+	@echo "\n==== Awk ========"
+	@cd awk && ./part1.awk ../input.txt
+	@echo "\n==== Lua ========"
+	@cd lua && ./part1.lua
+	@echo "\n==== R =========="
+	@cd r && ./part1.r
+	@echo "\n==== Julia ======"
+	@cd julia && ./part1.jl
+	@echo "\n==== JavaScript ="
+	@cd javascript && node ./part1.js
 	@echo "\n==== Scala ======"
 	@make -C scala run
 	@echo "\n==== Java ======="
 	@make -C java run
 	@echo "\n==== Go ========="
 	@make -C go run
+	@echo "\n==== C# ========="
+	@make -C "c#" run
+	@echo "\n==== asm ========"
+	@make -C asm run
+	@echo "\n==== D =========="
+	@make -C d run
 
 perf: all
 	@echo "\n==== C =========="
@@ -62,3 +91,6 @@ clean:
 	make -C scala clean
 	make -C java clean
 	make -C go clean
+	make -C "c#" clean
+	make -C asm clean
+	make -C d clean

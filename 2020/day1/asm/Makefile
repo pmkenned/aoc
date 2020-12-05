@@ -8,5 +8,8 @@ all: part1.exe
 %.exe: %.o
 	ld -o $@ $^
 
+run: all
+	./part1.exe
+
 clean:
 	rm -f *.exe *.o
