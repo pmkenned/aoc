@@ -21,40 +21,40 @@ run:
 	@make -C c run
 	@echo "\n==== C++ ========"
 	@make -C c++ run
+	@echo "\n==== Go ========="
+	@make -C go run
 	@echo "\n==== Haskell ===="
 	@make -C haskell run
 	@echo "\n==== Rust ======="
 	@make -C rust run
 	@echo "\n==== OCaml ======"
 	@make -C ocaml run
+	@echo "\n==== Scala ======"
+	@make -C scala run
+	@echo "\n==== Java ======="
+	@make -C java run
+	@echo "\n==== Awk ========"
+	@cd awk && ./part1.awk ../input.txt
 	@echo "\n==== Python ====="
-	@cd python && ./part1.py
+	@cd python && ./part1.py && ./part2.py
+	@echo "\n==== JavaScript ="
+	@cd javascript && node ./part1.js && node ./part2.js
 	@echo "\n==== Perl ======="
-	@cd perl && ./part1.pl
+	@cd perl && ./part1.pl && ./part2.pl
 	@echo "\n==== PHP ========"
-	@cd php && ./part1.php
+	@cd php && ./part1.php && ./part2.php
 	@echo "\n==== Ruby ======="
 	@cd ruby && ./part1.rb
 	@echo "\n==== Elixir ====="
 	@cd elixir && ./part1.exs
 	@echo "\n==== Clojure ===="
 	@cd clojure && ./part1.clj
-	@echo "\n==== Awk ========"
-	@cd awk && ./part1.awk ../input.txt
 	@echo "\n==== Lua ========"
 	@cd lua && ./part1.lua
 	@echo "\n==== R =========="
 	@cd r && ./part1.r
 	@echo "\n==== Julia ======"
 	@cd julia && ./part1.jl
-	@echo "\n==== JavaScript ="
-	@cd javascript && node ./part1.js
-	@echo "\n==== Scala ======"
-	@make -C scala run
-	@echo "\n==== Java ======="
-	@make -C java run
-	@echo "\n==== Go ========="
-	@make -C go run
 	@echo "\n==== C# ========="
 	@make -C "c#" run
 	@echo "\n==== asm ========"

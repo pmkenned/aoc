@@ -20,11 +20,16 @@ for ($i=0; $i<$len; $i++) {
     $n = $numbers[$i];
     for ($j=$i+1; $j<$len; $j++) {
         $m = $numbers[$j];
-        if ($n + $m == 2020) {
-            echo $n*$m."\n";
-            $done=1;
-            break;
+        for ($k=$j+1; $k<$len; $k++) {
+            $o = $numbers[$k];
+            if ($n + $m + $o == 2020) {
+                echo $n*$m*$o."\n";
+                $done = 1;
+                break;
+            }
         }
+        if ($done)
+            break;
     }
     if ($done)
         break;

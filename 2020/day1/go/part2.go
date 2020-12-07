@@ -30,10 +30,12 @@ func main() {
     numbers := readInput()
 
     for i, n := range numbers {
-        for _, m := range numbers[i+1:] {
-            if n + m == 2020 {
-                fmt.Println(n * m)
-                break
+        for j, m := range numbers[i+1:] {
+            for _, o := range numbers[j+1:] {
+                if n + m + o == 2020 {
+                    fmt.Println(n * m * o)
+                    break
+                }
             }
         }
     }

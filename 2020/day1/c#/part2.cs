@@ -16,8 +16,11 @@ public class Part1
             int n = numbers[i];
             for (int j = i+1; j < numbers.Length; j++) {
                 int m = numbers[j];
-                if (n + m == 2020) {
-                    Console.WriteLine(n*m);
+                for (int k = j+1; k < numbers.Length; k++) {
+                    int o = numbers[k];
+                    if (n + m + o== 2020) {
+                        Console.WriteLine(n*m*o);
+                    }
                 }
             }
         }

@@ -12,8 +12,11 @@ for (my $i=0; $i < $#lines; $i++) {
     my $n = $lines[$i];
     for (my $j=$i+1; $j < $#lines; $j++) {
         my $m = $lines[$j];
-        if ($n + $m == 2020) {
-            print $n*$m . "\n";
+        for (my $k=$j+1; $k < $#lines; $k++) {
+            my $o = $lines[$k];
+            if ($n + $m + $o == 2020) {
+                print $n*$m*$o . "\n";
+            }
         }
     }
 }

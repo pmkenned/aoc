@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-class Part1
+class Part2
 {
     private static List<Integer> readFile()
     {
@@ -27,13 +27,15 @@ class Part1
         List<Integer> numbers = readFile();
         Collections.sort(numbers);
 
-        //for (Integer i : numbers) {
         for (int i = 0 ; i < numbers.size(); i++) {
-            int x = numbers.get(i);
-            Integer sought = 2020 - x;
-            int idx = numbers.indexOf(sought);
-            if (idx > i && idx != -1) {
-                System.out.println(x*numbers.get(idx));
+            for (int j = i+1 ; j < numbers.size(); j++) {
+                int x = numbers.get(i);
+                int y = numbers.get(j);
+                Integer sought = 2020 - x - y;
+                int idx = numbers.indexOf(sought);
+                if (idx > j && idx != -1) {
+                    System.out.println(x*y*numbers.get(idx));
+                }
             }
         }
     }
