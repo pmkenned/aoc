@@ -2,6 +2,7 @@
 
 MAKEFLAGS += --no-print-directory 
 
+
 all:
 	make -C c
 	make -C c++
@@ -14,6 +15,10 @@ all:
 	make -C "c#"
 	make -C asm
 	make -C d
+	make -C algol
+	make -C basic
+	make -C forth
+	make -C fortran
 
 #run: MAKEFLAGS += --silent
 run:
@@ -61,6 +66,14 @@ run:
 	@make -C asm run
 	@echo "\n==== D =========="
 	@make -C d run
+	@echo "\n==== Algol ======"
+	@make -C algol run
+	@echo "\n==== Basic ======"
+	@make -C basic run
+	@echo "\n==== Forth ======"
+	@make -C forth run
+	@echo "\n==== Fortran ===="
+	@make -C fortran run
 
 perf: all
 	@echo "\n==== C =========="
