@@ -10,6 +10,7 @@ all:
 	make -C rust
 	make -C ocaml
 	make -C scala
+	make -C swift
 	make -C java
 	make -C go
 	make -C "c#"
@@ -36,6 +37,8 @@ run:
 	@make -C ocaml run
 	@echo "\n==== Scala ======"
 	@make -C scala run
+	@echo "\n==== Swift ======"
+	@make -C swift run
 	@echo "\n==== Java ======="
 	@make -C java run
 	@echo "\n==== Awk ========"
@@ -102,6 +105,7 @@ clean:
 	make -C rust clean
 	make -C ocaml clean
 	make -C scala clean
+	make -C swift clean
 	make -C java clean
 	make -C go clean
 	make -C "c#" clean

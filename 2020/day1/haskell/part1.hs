@@ -1,28 +1,15 @@
 import System.IO
+import Data.List
 
--- True, False
--- &&, ||, not
--- ==, /=
--- succ, min, max, 
-
-zs = [1,2,3]
-
-doubleSmall x = if x > 100
-                then x
-                else x*2
-
-foo :: (Integral a) => a -> Int
-foo 4 = 5
-foo x = 3
+f :: Integer -> [Integer] -> Integer
+f x [] = 1
+f x xs = let z = head xs in if elem (x-z) (tail xs) then z*(x-z) else 1
 
 main :: IO()
 main = do
-    --putStr "Name: "
-    --hFlush stdout
-    --name <- getLine
-    --putStrLn ("Hi " ++ name)
-    print (foo 4)
-    print (foo 0)
-    print (min 3 4)
-    let xs = [5,2,8]
-    print (xs ++ zs)
+    handle <- openFile "../input.txt" ReadMode
+    contents <- hGetContents handle
+    let lines = words contents
+    let nums = (map read lines) :: [Integer]
+    let z = map (f 2020) (tails nums)
+    print (foldr (*) 1 z)
