@@ -3,9 +3,18 @@ Advent of Code
 
 Languages to consider:
 
-* Lua
-* Julia
 * Groovy
-* Clojure
-* Elixir
-* D
+* Cobol
+* Lisp
+* Bash
+* Rexx
+* tcl
+* Pascal
+* Smalltalk
+* Zig
+* Odin
+* Jai
+* Nim
+* Beef
+* V
+* Prolog

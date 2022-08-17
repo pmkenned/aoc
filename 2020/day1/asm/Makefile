@@ -1,4 +1,4 @@
-.PHONY: all clean
+.PHONY: all run clean
 
 all: part1.exe
 
